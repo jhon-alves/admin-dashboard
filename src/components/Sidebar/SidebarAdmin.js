@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Sidebar, Menu, MenuItem, useProSidebar } from 'react-pro-sidebar';
 
 // MUI
