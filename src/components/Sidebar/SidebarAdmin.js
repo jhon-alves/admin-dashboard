@@ -1,7 +1,9 @@
 import React from 'react';
-import { Sidebar, Menu, MenuItem, useProSidebar } from 'react-pro-sidebar';
+import { Sidebar, Menu, useProSidebar } from 'react-pro-sidebar';
 
 // MUI
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material';
 
@@ -20,21 +22,22 @@ export function SidebarAdmin() {
 
   return (
     <Sidebar backgroundColor={colors.primary[400]}>
-      <Menu>
-        <MenuItem
-          onClick={() => collapseSidebar()}
-          icon={<MenuOutlinedIcon />}
-          style={{
-            margin: "10px 0 20px 0",
-            color: colors.grey[100],
-          }}
+      <Menu renderMenuItemStyles={() => {}}>
+        <Box 
+          display="flex" 
+          alignItems="center" 
+          justifyContent={collapsed ? 'center' : 'start'} 
+          margin={collapsed ? '10px 0 20px' : '10px 30px 20px'}
         >
+          <IconButton onClick={() => collapseSidebar()}>
+            <MenuOutlinedIcon />
+          </IconButton>
           {!collapsed && 
-            <Typography variant="h3" color={colors.grey[100]}>
+            <Typography variant="h3" color={colors.grey[100]} sx={{ pl: 2 }}>
               DASHES
             </Typography>
           }
-        </MenuItem>
+        </Box>
 
         {!collapsed && <MenuAvatar />}
 
