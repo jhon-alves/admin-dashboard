@@ -16,10 +16,10 @@ Abrir em [http://localhost:3000](http://localhost:3000) para visualizar em seu n
 
 ## Dependências
 
-- Nivo [https://nivo.rocks/](Visualizar ->)
-- FullCalendar [https://fullcalendar.io/](Visualizar ->)
-- React Pro Sidebar [https://github.com/azouaoui-med/react-pro-sidebar](Visualizar ->)
-- Material UI [https://mui.com/](Visualizar ->)
-- Formik [https://formik.org/](Visualizar ->)
-- Yup [https://github.com/jquense/yup](Visualizar ->)
-- React Router Dom [https://reactrouter.com/en/v6.3.0/getting-started/overview](Visualizar ->)
+- Nivo [Visualizar ->](https://nivo.rocks/)
+- FullCalendar [Visualizar ->](https://fullcalendar.io/)
+- React Pro Sidebar [Visualizar ->](https://github.com/azouaoui-med/react-pro-sidebar)
+- Material UI [Visualizar ->](https://mui.com/)
+- Formik [Visualizar ->](https://formik.org/)
+- Yup [Visualizar ->](https://github.com/jquense/yup)
+- React Router Dom [Visualizar ->](https://reactrouter.com/en/v6.3.0/getting-started/overview)
