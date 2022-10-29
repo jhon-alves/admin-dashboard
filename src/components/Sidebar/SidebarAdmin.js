@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
+import { Sidebar, Menu, MenuItem, useProSidebar } from 'react-pro-sidebar';
 
 // MUI
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material';
 
@@ -18,40 +16,29 @@ import { MenuAvatar } from './MenuAvatar';
 export function SidebarAdmin() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Dashboard");
+  const { collapseSidebar, collapsed } = useProSidebar();
 
   return (
-    <Sidebar collapsed={isCollapsed} backgroundColor={colors.primary[400]}>
+    <Sidebar backgroundColor={colors.primary[400]}>
       <Menu>
         <MenuItem
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          icon={isCollapsed && <MenuOutlinedIcon />}
+          onClick={() => collapseSidebar()}
+          icon={<MenuOutlinedIcon />}
           style={{
             margin: "10px 0 20px 0",
             color: colors.grey[100],
           }}
         >
-          {!isCollapsed && (
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              ml="15px"
-            >
-              <Typography variant="h3" color={colors.grey[100]}>
-                DASHES
-              </Typography>
-              <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                <MenuOutlinedIcon />
-              </IconButton>
-            </Box>
-          )}
+          {!collapsed && 
+            <Typography variant="h3" color={colors.grey[100]}>
+              DASHES
+            </Typography>
+          }
         </MenuItem>
 
-        {!isCollapsed && <MenuAvatar />}
+        {!collapsed && <MenuAvatar />}
 
-        <MenuItems isCollapsed={isCollapsed} selected={selected} setSelected={setSelected} />
+        <MenuItems collapsed={collapsed} />
       </Menu>
     </Sidebar>
   );
